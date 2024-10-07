@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:80"  # Pemetaan port untuk akses ke aplikasi
+    volumes:
+      - ./src:/var/www/html  # Menggunakan volume untuk sinkronisasi file
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my_root_password   # Password root MySQL
+      MYSQL_DATABASE: my_database               # Nama database yang akan dibuat
+      MYSQL_USER: my_user                       # Nama user MySQL
+      MYSQL_PASSWORD: my_user_password          # Password user MySQL
+    volumes:
+      - ./db_antriyuk.sql:/docker-entrypoint-initdb.d/db_antriyuk.sql  # Load file SQL saat inisialisasi
+    ports:
+      - "3306:3306"  # Pemetaan port untuk akses MySQL
