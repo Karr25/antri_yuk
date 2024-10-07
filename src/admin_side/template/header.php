@@ -62,7 +62,7 @@ if ($_SESSION['user']['status_akun'] == 'Belum Aktif') {
         <br><a href="http://localhost/antriyuk/admin_side/proses_logout.php"><b>[x] Logout</b></a></td>
       </tr>
     </table> -->
-      <div class="px-3 py-2" style="width: 20%; height: 100%; background-color: white; border-radius: 9px;">
+      <!-- <div class="px-3 py-2" style="width: 20%; height: 100%; background-color: white; border-radius: 9px;">
         <table>
           <tr>
             <td><img
@@ -75,7 +75,7 @@ if ($_SESSION['user']['status_akun'] == 'Belum Aktif') {
             </td>
           </tr>
         </table>
-      </div>
+      </div> -->
     </div>
     </div>
   </nav>
