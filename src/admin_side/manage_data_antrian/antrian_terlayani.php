@@ -13,10 +13,10 @@ error_reporting(0);
         <a class="nav-link" href="index.php">Semua Data Antrian</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">Antrian Terlayani</a>
+        <a class="nav-link" href="antrian_terlayani.php">Antrian Terlayani</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="antrian_belum_terlayani.php">Antrian Belum Terlayani</a>
+        <a class="nav-link active" href="#">Antrian Belum Terlayani</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="antrian_yang_dilayani_anda.php" tabindex="-1">Antrian Yang Dilayani Anda</a>
@@ -29,7 +29,7 @@ error_reporting(0);
 <center>
 <table>
 <tr>
-    <td class="px-2"><font size="+3">Antrian Terlayani</font></td>
+    <td class="px-2"><font size="+3">Antrian Belum Terlayani</font></td>
     <td class="px-2"><font><div class="card px-2 py-2" style="text-align: left">
     <b>Reset Antrian</b>
     <i>Kembali ke antrian pertama</i>
@@ -58,7 +58,7 @@ error_reporting(0);
         <td><b>Dilayani Oleh (id admin)</b></td>
     </tr>
     <?php 
-        $queri1 = mysqli_query($conn, "SELECT * FROM tbl_antrian_live WHERE no_antrian > 0 AND status_dilayani = 'sudah dilayani'");
+        $queri1 = mysqli_query($conn, "SELECT * FROM tbl_antrian_live WHERE no_antrian > 0 AND status_dilayani = 'belum'");
         $dataArray = [];
         while ($dataant = mysqli_fetch_array($queri1)) {
             $dataArray[] = $dataant; // Collecting data in an array
@@ -99,7 +99,7 @@ function openPrintPopup() {
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Antrian Terlayani</title>
+        <title>Antrian Belum Terlayani</title>
         <style>
             body { font-family: Arial, sans-serif; }
             table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
@@ -108,7 +108,7 @@ function openPrintPopup() {
         </style>
     </head>
     <body>
-    <h1>Antrian Terlayani</h1>
+    <h1>Antrian Belum Terlayani</h1>
     <table>
         <tr>
             <th>ID Antrian</th>
@@ -124,7 +124,7 @@ function openPrintPopup() {
         content += '<tr>' +
             '<td>' + item.id_data + '</td>' +
             '<td>' + item.no_antrian + '</td>' +
-            '<td>Sudah Dilayani</td>' +
+            '<td>' + (item.status_dilayani === 'belum' ? 'Belum' : 'Sudah Dilayani') + '</td>' +
             '<td>' + item.waktu_buat + '</td>' +
             '<td>' + item.waktu_selesai_dilayani + '</td>' +
             '<td>' + item.id_admin_melayani + '</td>' +

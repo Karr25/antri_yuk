@@ -16,5 +16,4 @@ if($_SESSION['user']['id_admin'] == null) {header('Location:login_page.php'); }
 
 	header('Location:index.php');
 
-
- ?>
+?>
