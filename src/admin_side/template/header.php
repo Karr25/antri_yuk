@@ -54,28 +54,7 @@ if ($_SESSION['user']['status_akun'] == 'Belum Aktif') {
         </li>
       </ul>
 
-      <!-- <div class="px-3 py-2"  style="width: 20%; height: 100%; background-color: white; border-radius: 9px;">
-    <table>
-      <tr>
-        <td><img src="http://localhost/antriyuk/node_module/assets/foto_profil/<?= $_SESSION['user']['file_foto_profil']; ?>" style="width: 100%;" class="img-thumbnail"></td>
-        <td class="pl-2"><?= $_SESSION['user']['username']; ?><br>
-        <br><a href="http://localhost/antriyuk/admin_side/proses_logout.php"><b>[x] Logout</b></a></td>
-      </tr>
-    </table> -->
-      <!-- <div class="px-3 py-2" style="width: 20%; height: 100%; background-color: white; border-radius: 9px;">
-        <table>
-          <tr>
-            <td><img
-                src="http://localhost/antrianism/node_module/assets/foto_profil/<?= $_SESSION['user']['file_foto_profil']; ?>"
-                style="width: 100%;" class="img-thumbnail"></td>
-            <td class="pl-2">
-              <?= $_SESSION['user']['username']; ?><br>
-              <b>ID : </b><?= $_SESSION['user']['id_admin']; ?>
-              <br><a href="http://localhost/antrianism/admin_side/proses_logout.php"><b>[x] Logout</b></a>
-            </td>
-          </tr>
-        </table>
-      </div> -->
+      
     </div>
     </div>
   </nav>
