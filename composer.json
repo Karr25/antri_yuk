@@ -1,0 +1,30 @@
+{
+    "name": "karr25/pluto",
+    "description": "A PHP project for Docker CI/CD integration",
+    "type": "project",
+    "require": {
+      "php": "^8.0"
+    },
+    "scripts": {
+      "post-install-cmd": [
+        "php -v",
+        "composer validate --strict"
+      ]
+    },
+    "config": {
+      "platform": {
+        "php": "8.0.0"
+      },
+      "preferred-install": "dist",
+      "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Your Name",
+        "email": "your-email@example.com"
+      }
+    ]
+  }
+  
